@@ -1,6 +1,6 @@
 # Cohere Terminal Tool
 
-A terminal tool that lives inside your terminal and uses Cohere's latest Command-A model to interact with your directory, files, and code.
+Your friendly AI assistant that lives inside your terminal and uses Cohere's latest Command-A model to interact with your directory, files, and code.
 
 Inspired by Claude Code. Built with Cohere ❤️.
 
