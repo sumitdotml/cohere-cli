@@ -19,10 +19,6 @@ from dotenv import load_dotenv
 from . import config
 
 
-# PROJECT_DIR is not reliable when installed globally, remove or don't use for .env
-# PROJECT_DIR = os.path.join(os.path.dirname(__file__), "..")
-
-
 def get_workspace_context(directory: str) -> str:
     """Get context about the current workspace."""
     files = []
@@ -198,7 +194,8 @@ def process_response(
 
     # Use config for assistant label
     console.print(
-        f"\n[dim]{format_timestamp()}[/dim] [bold {COLORS['blue']}]{config.ASSISTANT_LABEL}:[/bold {COLORS['blue']}]"
+        f"\n[dim]{format_timestamp()}[/dim] [bold {COLORS['blue']
+                                                   }]{config.ASSISTANT_LABEL}:[/bold {COLORS['blue']}]"
     )
 
     # creating a panel for the streaming content
@@ -311,7 +308,7 @@ def chat_loop():
         style=Style.from_dict(
             {
                 "timestamp": "#666666",  # gray
-                "prompt": f"#a172fc bold",  # purple
+                "prompt": "#a172fc bold",  # purple
                 "input": "white",
             }
         ),
@@ -345,7 +342,8 @@ def chat_loop():
     while True:
         try:
             timestamp = format_timestamp()
-            prompt_text = f"<timestamp>{timestamp}</timestamp> <prompt>{config.USER_LABEL}:</prompt> "
+            prompt_text = f"<timestamp>{
+                timestamp}</timestamp> <prompt>{config.USER_LABEL}:</prompt> "
             prompt = HTML(prompt_text)
             user_input = session.prompt(prompt)
 
@@ -389,7 +387,10 @@ def chat_loop():
             conversation_history.append({"role": "user", "content": user_input})
 
             # first, checking if model wants to use tools
-            console.print(f"\n[dim]{format_timestamp()}[/dim] [dim]Thinking...[/dim]")
+            console.print(
+                f"\n[dim]{format_timestamp()
+                          }[/dim] [dim]Thinking...[/dim]"
+            )
             # Use config for model name
             response = co.chat(
                 model=config.MODEL_NAME, messages=conversation_history, tools=tools

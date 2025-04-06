@@ -18,9 +18,9 @@ You can read files from this directory when answering questions using the read_f
 Always provide context-aware responses considering the current workspace. Be concise but informative."""
 
 
-######################
+##########################
 # UI/Display Configuration
-######################
+##########################
 
 # The name displayed for the user in the chat interface.
 USER_LABEL = "You"
